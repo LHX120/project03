@@ -12,39 +12,40 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #f7f7f7;
+            background-color: #ffffff;
             font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
-            color: #333333;
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
         }
         
-        /* Main Container */
+        /* 主容器 */
         .container {
             width: 100%;
             max-width: 414px;
-            padding: 12px 12px 24px 12px;
+            padding: 20px 16px 30px 16px;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
         }
 
-        /* Card Style */
+        /* 顶部主卡片 */
         .card {
             background-color: #ffffff;
-            border-radius: 12px;
-            padding: 24px 16px 16px 16px;
+            border: 1px solid #f2f2f2;
+            border-radius: 16px;
+            padding: 30px 20px 16px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
         }
 
-        /* Merchant Icon */
+        /* 商户图标 */
         .merchant-icon-container {
-            width: 48px;
-            height: 48px;
+            width: 52px;
+            height: 52px;
             background-color: #eb6825;
             border-radius: 50%;
             display: flex;
@@ -53,89 +54,94 @@
             margin-bottom: 12px;
         }
         .merchant-icon {
-            width: 24px;
-            height: 24px;
-            fill: #ffffff;
+            width: 26px;
+            height: 26px;
+            color: #ffffff;
+            font-size: 24px;
+            line-height: 1;
         }
 
         .merchant-name {
             font-size: 15px;
             color: #333333;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
         .amount {
-            font-size: 34px;
-            font-weight: 500;
+            font-size: 40px;
+            font-weight: 400;
             color: #000000;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         }
 
         .status {
-            font-size: 13px;
+            font-size: 14px;
             color: #888888;
-            margin-bottom: 28px;
+            margin-bottom: 32px;
         }
 
-        /* Details Rows */
+        /* 详情列表 */
         .detail-box {
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 14px;
-            border-bottom: 1px solid #f2f2f2;
-            padding-bottom: 16px;
-            margin-bottom: 14px;
+            gap: 16px;
+            padding-bottom: 20px;
         }
 
         .row {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: flex-start;
-            font-size: 14px;
+            font-size: 15px;
             line-height: 1.4;
         }
 
         .label {
-            color: #999999;
-            width: 80px;
+            color: #9a9a9a;
+            width: 105px;
             flex-shrink: 0;
         }
 
         .value {
             color: #333333;
-            text-align: right;
+            text-align: left;
+            flex-grow: 1;
             word-break: break-all;
         }
         
-        .value.orange-text {
-            color: #f43530;
+        /* 碰友日立减文字与金额统一改成红色 */
+        .red-row .label,
+        .red-row .value {
+            color: #ff3b30 !important; 
         }
         
         .value .arrow {
-            color: #cccccc;
+            color: #b2b2b2;
             margin-left: 4px;
             font-family: "SimSun", sans-serif;
+            font-size: 13px;
         }
 
-        /* Reward Section */
+        /* 支付奖励区域 */
         .reward-row {
             width: 100%;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
-            font-size: 14px;
-            margin-bottom: 14px;
-            }
+            margin-top: -4px;
+            margin-bottom: 16px;
+        }
         .reward-btn {
             display: inline-flex;
             align-items: center;
             color: #ff8200;
-            font-size: 13px;
-            background: none;
+            font-size: 14px;
+            background-color: #fff7eb;
             border: none;
-            padding: 0;
+            padding: 4px 10px;
+            border-radius: 12px;
             cursor: pointer;
         }
         .reward-icon {
@@ -148,23 +154,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 4px;
+            margin-right: 5px;
             font-weight: bold;
         }
 
-        /* Bank Info Rows */
-        .bank-box {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        /* More Button */
+        /* 更多按钮 */
         .more-btn {
-            font-size: 13px;
+            font-size: 14px;
             color: #999999;
-            margin-top: 18px;
+            margin-top: 12px;
             display: flex;
             align-items: center;
             gap: 4px;
@@ -173,74 +171,68 @@
         .more-btn::after {
             content: "";
             display: inline-block;
-            width: 6px;
-            height: 6px;
-            border-right: 1px solid #999999;
-            border-bottom: 1px solid #999999;
+            width: 7px;
+            height: 7px;
+            border-right: 1px solid #aaa;
+            border-bottom: 1px solid #aaa;
             transform: rotate(45deg);
             margin-bottom: 3px;
         }
 
-        /* Management Card */
+        /* 底部独立卡片组件 */
         .mgt-card {
             background-color: #ffffff;
+            border: 1px solid #f2f2f2;
             border-radius: 12px;
-            padding: 14px 16px;
+            padding: 16px;
             width: 100%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
         }
         .mgt-title {
             font-size: 15px;
-            font-weight: 500;
+            font-weight: bold;
             color: #000000;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
         .banner {
-            background-color: #fdf7ee;
+            background-color: #fff9f0;
             border-radius: 8px;
-            padding: 10px 12px;
+            padding: 12px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            cursor: pointer;
         }
         .banner-left {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
         .banner-icon {
-            width: 32px;
-            height: 32px;
-            background-color: #d1e9ff;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
+            font-size: 20px;
         }
         .banner-text {
-            font-size: 13px;
+            font-size: 14px;
             color: #666666;
         }
         .banner-text span {
             color: #ff8200;
         }
         .banner-arrow {
-            color: #cccccc;
-            font-size: 14px;
+            color: #ccc;
             font-family: "SimSun", sans-serif;
         }
 
-        /* Category Card */
+        /* 账单分类独立条 */
         .cat-card {
             background-color: #ffffff;
+            border: 1px solid #f2f2f2;
             border-radius: 12px;
-            padding: 14px 16px;
+            padding: 16px;
             width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
         }
         .cat-title {
             font-size: 15px;
@@ -258,12 +250,9 @@
 <body>
 
     <div class="container">
-        
         <div class="card">
             <div class="merchant-icon-container">
-                <svg class="merchant-icon" viewBox="0 0 24 24">
-                    <path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12zM12 10c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
-                </svg>
+                <span class="merchant-icon">🏪</span>
             </div>
             <div class="merchant-name">城发橘子洲</div>
             <div class="amount">39.31</div>
@@ -274,9 +263,9 @@
                     <div class="label">订单金额</div>
                     <div class="value">40.00</div>
                 </div>
-                <div class="row">
+                <div class="row red-row">
                     <div class="label">碰友日立减</div>
-                    <div class="value orange-text">-0.69</div>
+                    <div class="value">-0.69</div>
                 </div>
                 <div class="row">
                     <div class="label">支付时间</div>
@@ -294,12 +283,12 @@
 
             <div class="reward-row">
                 <div class="label">支付奖励</div>
-                <button class="reward-btn">
+                <div class="reward-btn">
                     <span class="reward-icon">v</span>立即领取4积分
-                </button>
+                </div>
             </div>
 
-            <div class="bank-box">
+            <div class="detail-box" style="border-top: 1px dashed #f5f5f5; padding-top: 16px;">
                 <div class="row">
                     <div class="label">收单机构</div>
                     <div class="value">兴业银行股份有限公司</div>
@@ -332,23 +321,19 @@
             <div class="cat-title">账单分类</div>
             <div class="cat-value">日用百货 <span class="banner-arrow">&gt;</span></div>
         </div>
-
     </div>
 
     <script>
         (function() {
-            // 获取客户端当前的北京时间/本地日期
+            // 实时获取当前打开网页时的北京时间/本地日期
             const now = new Date();
             const year = now.getFullYear();
             const month = String(now.getMonth() + 1).padStart(2, '0');
             const date = String(now.getDate()).padStart(2, '0');
             
-            // 拼接当天的日期 + 固定的初始交易具体时间
+            // 拼接当天系统日期，保持固定的交易时间 17:06:06 不变
             const fixedTime = "17:06:06";
-            const targetString = `${year}-${month}-${date} ${fixedTime}`;
-            
-            // 写入页面容器
-            document.getElementById("pay-time").innerText = targetString;
+            document.getElementById("pay-time").innerText = `${year}-${month}-${date} ${fixedTime}`;
         })();
     </script>
 </body>
